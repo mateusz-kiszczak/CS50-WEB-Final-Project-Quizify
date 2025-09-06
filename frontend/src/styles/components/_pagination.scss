@@ -1,0 +1,57 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.pagination-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "backButton nextButton"
+        "indexButtons indexButtons"
+    ;
+    gap: 1rem;
+    margin: 1rem auto;
+
+    @media only screen and (min-width: $list-laptop) {
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "backButton indexButtons nextButton"
+        ;
+    }
+
+    .back-button {
+        grid-area: backButton;
+        font-weight: bold;
+
+        @media only screen and (min-width: $list-tablet) {
+            width: 150px;
+            justify-self: start;
+        }
+    }
+
+    .next-button {
+        grid-area: nextButton;
+        font-weight: bold;
+
+        @media only screen and (min-width: $list-tablet) {
+            width: 150px;
+            justify-self: end;
+        }
+    }
+
+    .index-buttons {
+        @include flex-center-all-hor;
+
+        grid-area: indexButtons;
+        gap: .5rem;
+
+        .pagination-section__index-buttons__dots {
+            font-size: 2.5rem;
+            margin: auto 1rem;
+            color: $neutral-900
+        }
+    }
+}
+

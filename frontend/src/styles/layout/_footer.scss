@@ -1,0 +1,151 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+
+.footer {
+    @include flex-center-all-ver;
+
+    background-color: $sky-50;
+    border-top: 5px solid $sky-300;
+
+    .footer-wrapper {
+        @include footer-container;
+        @include flex-center-all-ver;
+        gap: 4rem;
+        
+
+        @media only screen and (min-width: $desktop) {
+            gap: 10rem;
+        }
+
+        .footer-content {
+            @include flex-center-all-ver;
+
+            gap: 2rem;
+
+            @media only screen and (min-width: $desktop) {
+                @include flex-space-bt-hor--top;
+
+                width: 100%;
+            }
+
+            
+            .footer__logo-and-social {
+                @include flex-center-all-ver;
+                
+                gap: 1rem;
+
+                @media only screen and (min-width: $desktop) {
+                    @include flex-center-start-ver;
+                    gap: 1.5rem;
+                }
+                
+                .footer__logo {
+                    @include afacad-black;
+                    
+                    font-size: 2.5rem;
+                    
+                    &:first-letter {
+                        color: $neutral-900;
+                    }
+                    
+                    @media only screen and (min-width: $desktop) {
+                        font-size: 3rem;
+                        
+                    }
+                }
+                
+                .footer__social-links {
+                    @include flex-center-all-hor;
+                    
+                    gap: 1rem;
+                    
+                    .footer__social-links__link {
+                        @include flex-center-all-ver;
+                        width: 44px;
+                        height: 44px;
+
+                        & > img {
+                            width: 32px;
+                        }
+                    }
+                }
+            }
+
+            .footer__web-links {
+                @include flex-center-all-ver;
+
+                gap: 2rem;
+                margin-top: 1rem;
+
+                @media only screen and (min-width: $tablet) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    gap: 4rem;
+
+                    @media only screen and (min-width: $desktop) {
+                        @include flex-start-all-hor;
+    
+                        gap: 2.5rem;
+                    }
+                }
+
+
+                
+
+                .footer__web-links__links-container {
+                    @include flex-center-all-ver;
+
+                    gap: 1rem;
+
+                    @media only screen and (min-width: $tablet) {
+                        align-items: flex-start;
+
+                        @media only screen and (min-width: $desktop) {
+                            @include flex-start-all-ver;
+                            
+                            gap: 1.5rem;
+                        }
+                    }
+
+                    & > h4 {
+                        @include lato-bold;
+
+                        color: $neutral-800;
+                    }
+
+                    & > div {
+                        @include flex-center-all-ver;
+
+                        gap: .5rem;
+
+                        @media only screen and (min-width: $tablet) {
+                            align-items: flex-start;
+
+                            @media only screen and (min-width: $desktop) {
+                                @include flex-start-all-ver;
+                                
+                                gap: 1rem;
+                            }
+                        }
+
+                        & > a {
+                            color: $neutral-700;
+                            
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer__bottom {
+            color: $neutral-900;
+            text-align: center;
+        }
+    }
+}

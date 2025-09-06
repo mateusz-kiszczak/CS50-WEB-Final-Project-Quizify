@@ -1,0 +1,364 @@
+@use '../abstract/variables' as *;
+
+
+
+// *
+// * Flex
+// *
+
+@mixin flex-center-all-hor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-all-ver {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-start-ver {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin flex-center-start-hor {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin flex-center-start-hor--wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin flex-start-all-hor {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-start-all-hor--wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+@mixin flex-start-all-ver {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-space-bt-hor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-space-bt-ver {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-space-bt-hor--top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+// *
+// * Containers
+// *
+
+@mixin navbar-container {
+    @include flex-space-bt-hor;
+
+    width: 100%;
+    padding: 1rem;
+    
+    @media only screen and (min-width: $tablet) {
+        padding: 1.5rem 2rem;
+        
+        @media only screen and (min-width: $desktop) {
+            max-width: 1366px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@mixin footer-container {
+    @include flex-space-bt-hor;
+	
+
+    width: 100%;
+    padding: 2rem 1rem;
+    
+    @media only screen and (min-width: $tablet) {
+        padding: 4rem 2rem;
+        max-width: 1366px;
+        margin: 0 auto;
+    }
+}
+
+@mixin section-container {
+    width: 100%;
+    max-width: 1366px;
+    padding: {
+        top: 2rem;
+        right: 1rem;
+        bottom: 4rem;
+        left: 1rem;
+    };
+
+    @media only screen and (min-width: $tablet) {
+        padding: {
+            top: 4rem;
+            right: 2rem;
+            bottom: 6rem;
+            left: 2rem;
+        };
+
+        @media only screen and (min-width: $desktop) {
+            margin: 0 auto;
+            padding: {
+                top: 6rem;
+                right: 2rem;
+                bottom: 8rem;
+                left: 2rem;
+            };
+        }
+    }
+}
+
+
+// *
+// * Fonts
+// *
+
+// Lato font
+
+@mixin lato-thin {
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	font-style: normal;
+}
+
+@mixin lato-light {
+	font-family: "Lato", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@mixin lato-regular {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin lato-bold {
+	font-family: "Lato", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@mixin lato-black {
+	font-family: "Lato", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+}
+
+@mixin lato-thin-italic {
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	font-style: italic;
+}
+
+@mixin lato-light-italic {
+	font-family: "Lato", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+}
+
+@mixin lato-regular-italic {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin lato-bold-italic {
+	font-family: "Lato", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+	
+@mixin lato-black-italic {
+	font-family: "Lato", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+}
+	
+
+// Afacad font
+
+@mixin afacad-thin {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: normal;
+}
+
+@mixin afacad-light {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@mixin afacad-regular {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin afacad-bold {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@mixin afacad-black {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: normal;
+}
+
+@mixin afacad-thin-italic {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: italic;
+}
+
+@mixin afacad-light-italic {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: italic;
+}
+
+@mixin afacad-regular-italic {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin afacad-bold-italic {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: italic;
+}
+	
+@mixin afacad-black-italic {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: italic;
+}
+
+
+// Open Sans font
+
+@mixin open-sans-thin {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: normal;
+}
+
+@mixin open-sans-light {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@mixin open-sans-regular {
+	font-family: "Afacad", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin open-sans-bold {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@mixin open-sans-black {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: normal;
+}
+
+@mixin open-sans-thin-italic {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: italic;
+}
+
+@mixin open-sans-light-italic {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: italic;
+}
+
+@mixin open-sans-regular-italic {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin open-sans-bold-italic {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: italic;
+}
+	
+@mixin open-sans-black-italic {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: italic;
+}

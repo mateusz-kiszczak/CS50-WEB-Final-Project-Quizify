@@ -1,0 +1,30 @@
+@use '../abstract/variables' as *;
+
+
+
+.divider {
+    width: 100%;
+    margin: 16px 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $neutral-300;
+}
+
+.divider--no-margin {
+    @extend .divider;
+
+    margin: 0;
+}
+
+.divider--blue {
+    @extend .divider;
+
+    border-top-color: $sky-200;
+}
+
+.divider--blue--no-margin {
+    @extend .divider;
+
+    border-top-color: $sky-200;
+    margin: 0;
+}

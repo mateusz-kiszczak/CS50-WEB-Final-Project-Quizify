@@ -1,0 +1,16 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+.subscriptions-section {
+    @include section-container;
+    @include flex-center-start-ver;
+    gap: 1rem;
+
+
+    h1 {
+        @media only screen and (min-width: $desktop) {
+			font-size: 4rem;
+		}
+    }
+}

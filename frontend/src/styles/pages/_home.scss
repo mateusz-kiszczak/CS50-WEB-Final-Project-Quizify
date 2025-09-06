@@ -1,0 +1,440 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+
+.home-page__header-wrapper {
+    width: 100%;
+    background-color: $sky-900;
+}
+
+
+.home-page__header {
+    @include flex-center-all-ver;
+
+    width: 100%;
+    padding: 4rem 2rem;
+    background-color: $sky-900;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (min-width: $tablet) {
+		padding: 4rem;
+        height: 400px;
+
+        @media only screen and (min-width: $desktop) {
+            padding: 4rem;
+            height: 500px;
+            
+            @media only screen and (min-width: $large) {
+                margin: 1rem auto 0 auto;
+                max-width: 1302px;
+                border-radius: $br-lg;
+                box-shadow: inset 0 0 0 5px $sky-700;
+                
+            }
+        }
+	}
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/home-page-hero.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.1;
+        z-index: -1;
+
+        @media only screen and (min-width: $large) {
+            border-radius: $br-lg;
+        }
+    }
+
+    .hero-subtext {
+        color: $sky-50;
+	    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 1rem;
+
+        @media only screen and (min-width: $tablet) {
+            font-size: 1.25rem;
+
+            @media only screen and (min-width: $desktop) {
+                font-size: 1.375rem;
+            }
+        }
+    }
+}
+
+.home-page__search-form {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
+
+        .home-page__search-form__input {
+            border: 1px solid $neutral-300;
+            border-radius: $br-md;
+            background-color: $neutral-50;
+            padding: .75rem 1.125rem;
+            width: 100%;
+            color: $neutral-900;
+            box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.25);
+
+            &::placeholder {
+                color: $neutral-600;
+            }
+
+            &:focus {
+                outline: none;
+                border: 1px solid $amber-600;
+            }
+        }
+
+        .home-page__search-form__button {
+            // width: 150px;
+            border-radius: $br-md;
+            box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.25);
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+
+            @media only screen and (min-width: $tablet) {
+                width: 200px;
+            }
+        }
+
+        @media only screen and (min-width: $tablet) {
+            flex-direction: row;
+        }
+    }
+
+.home-page__popular_quizzes {
+    @include section-container;
+    @include flex-center-start-ver;
+    gap: 1rem;
+
+
+
+    h2 {
+        color: $neutral-900;
+    }
+
+    .quiz-tiles-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+
+        @media only screen and (min-width: $list-tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+
+            @media only screen and (min-width: $list-laptop) {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+
+                @media only screen and (min-width: $list-desktop) {
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+
+    .home-page__popular_quizzes__button-container {
+        @include flex-center-all-hor;
+
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+.home-page__your-quiz {
+    @include flex-start-all-ver;
+
+    gap: 2rem;
+    width: 100%;
+    
+    background-color: $sky-900;
+    position: relative;
+    z-index: 1;
+            
+    @media only screen and (min-width: $large) {
+        padding: 4rem 2rem;
+        margin: 0 auto 1rem auto;
+        max-width: 1302px;
+        border-radius: $br-lg;
+        box-shadow: inset 0 0 0 5px $sky-700; 
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/home-page-create-your-quiz.webp');
+        background-size: cover 200%;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.5;
+        z-index: -1;
+
+        @media only screen and (min-width: $large) {
+            border-radius: $br-lg;
+        }
+    }  
+    
+
+    .home-page__your-quiz__wrapper {
+        @include flex-start-all-ver;
+        gap: 2rem;
+        width: 100%;
+
+        @include section-container;
+
+        @media only screen and (min-width: $tablet) {
+            gap: 4rem;
+            
+            @media only screen and (min-width: $large) {
+                padding: 0 2rem;
+            }
+        }
+
+        h2 {
+            color: $white;
+        }
+
+        .home-page__your-quiz__content {
+            @include flex-center-all-ver;
+
+            gap: 2rem;
+            width: 100%;
+
+            @media only screen and (min-width: $large) {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr auto 1fr;
+                grid-auto-rows: 1fr;
+            }
+
+            .home-page__your-quiz__content__box {
+                @include flex-center-all-ver;
+
+                gap: 2rem;
+                width: 100%;
+                padding: 4rem;
+                border: 4px solid hsla(199, 100%, 73%, 0.5);
+                border-radius: $br-lg;
+                background-color: hsla(201, 96%, 22%, 0.5);
+                transition: background-color 300ms;
+
+                @media only screen and (min-width: $tablet) {
+                    max-width: 500px;
+
+                    @media only screen and (min-width: $large) {
+                        height: 100%;
+                    }
+                }
+
+                img {
+                    width: auto;
+                    height: 90px;
+
+                    @media only screen and (min-width: $tablet) {
+                        height: 100px;
+
+                        @media only screen and (min-width: $large) {
+                            height: 150px;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 1.25rem;
+                    color: $sky-200;
+                    text-align: center;
+
+                    @media only screen and (min-width: $tablet) {
+                        font-size: 1.5rem;
+
+                        @media only screen and (min-width: $large) {
+                            display: flex;
+                            flex: 1;
+                            align-items: center;
+                            font-size: 1.75rem;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: hsla(201, 89%, 31%, 0.5);
+                    transition: background-color 150ms;
+                }
+            }
+
+            .home-page__your-quiz__content__arrow {
+                width: 38px;
+                height: auto;
+
+                @media only screen and (min-width: $large) {
+                    transform: rotate(-90deg);
+                    width: 50px;
+                }
+            }
+        }
+
+        .home-page__your-quiz__link-button {
+            width: 100%;
+            
+            a {
+                @include flex-center-all-hor;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    text-align: center;
+                    box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.25); 
+                    
+                    @media only screen and (min-width: $tablet) {
+                        max-width: 500px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-page__plans {
+    @include flex-center-all-ver;
+
+    gap: 2rem;
+    width: 100%;
+    
+    padding: 2rem 1rem 4rem 1rem;
+    background-color: $sky-100;
+    position: relative;
+    z-index: 1;
+    
+    @media only screen and (min-width: $tablet) { 
+        padding: 4rem 4rem 6rem 4rem;
+
+        @media only screen and (min-width: $large) {
+            margin: 8rem auto 1rem auto;
+            max-width: 1302px;
+            border-radius: $br-lg;
+            box-shadow: inset 0 0 0 5px $sky-700; 
+        }
+    }
+
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/home-page-plans-opacity.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 100% 77%;
+        opacity: 0.5;
+        z-index: -1;
+
+        @media only screen and (min-width: $large) {
+            border-radius: $br-lg;
+            background-position: 100% 85%;
+        }
+    } 
+
+    .home-page__plans__content {
+        @include flex-center-all-ver;
+
+        gap: 1rem;
+        padding: 2rem;
+        border: 3px solid $sky-200;
+        border-radius: $br-lg;
+        background-color: hsla(204, 100%, 97%, 0.8);
+        transition: color 300ms;
+        width: 100%;
+
+        @media only screen and (min-width: $tablet) {
+            padding: 4rem;
+            max-width: 750px;
+            gap: 2rem;
+
+            @media only screen and (min-width: $large) {
+                gap: 4rem;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: $neutral-900;
+
+            @media only screen and (min-width: $tablet) {
+                font-size: 2rem;
+
+                @media only screen and (min-width: $large) {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        a {
+            font-size: 1.25rem;
+            color: $fuchsia-900;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+
+            @media only screen and (min-width: $tablet) {
+                font-size: 1.5rem;
+
+                @media only screen and (min-width: $large) {
+                    font-size: 2rem;
+                    text-underline-offset: 8px;
+                }
+            }
+
+            &:hover {
+                color: $fuchsia-600;
+                transition: color 150ms;
+            }
+        }
+    }
+}
+
+.home-page__subscribe {
+    @include flex-center-all-ver;
+
+    gap: 2rem;
+    width: 100%;
+    
+    padding: 2rem 1rem 4rem 1rem;
+    background-color: $neutral-800;
+    position: relative;
+    z-index: 1;
+    
+    @media only screen and (min-width: $tablet) { 
+        padding: 4rem 4rem 6rem 4rem;
+
+        @media only screen and (min-width: $large) {
+            margin: 8rem auto 1rem auto;
+            max-width: 1302px;
+            border-radius: $br-lg;
+            box-shadow: inset 0 0 0 5px $neutral-700; 
+        }
+    }
+
+    h2 {
+        color: $white;
+    }
+}

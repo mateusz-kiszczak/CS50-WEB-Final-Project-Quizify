@@ -1,0 +1,30 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+
+.register-form-container {
+    @include flex-start-all-ver;
+    gap: 2rem;
+    
+    @include section-container;
+
+    @media only screen and (min-width: $desktop) {
+        gap: 4rem;
+    }
+
+    .register-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    hr {
+        max-width: 600px;
+    }
+
+    .already-registered {
+        @include flex-start-all-ver;
+
+        gap: 1.5rem;
+    }
+}

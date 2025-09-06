@@ -1,0 +1,107 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+* {
+	@include lato-regular;
+
+	font-size: 1.125rem; // 18px
+	color: $neutral-600;
+}
+
+h1, h2, h3, h4 {
+	@include afacad-black;
+}
+
+h1 {
+	font-size: 2.5rem;
+
+	@media only screen and (min-width: $tablet) {
+		font-size: 4rem;
+
+		@media only screen and (min-width: $desktop) {
+			font-size: 6rem;
+		}
+	}
+}
+
+h2 {
+	font-size: 2rem;
+
+	@media only screen and (min-width: $desktop) {
+		font-size: 2.5rem;
+	}
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+// Classes
+
+.hero-header {
+	font-size: 2.5rem;
+	color: $sky-50;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+	@media only screen and (min-width: $tablet) {
+		font-size: 4rem;
+
+		@media only screen and (min-width: $desktop) {
+			font-size: 5.5rem;
+		}
+	}
+}
+
+.header-1-sm {
+	font-size: 2.5rem;
+	color: $neutral-900;
+}
+
+.header-2-sm {
+	font-size: 2rem;
+	color: $neutral-900;
+}
+
+.header-3-sm {
+	font-size: 1.75rem;
+	color: $neutral-900;
+}
+
+.header-4-sm {
+	font-size: 1.5rem;
+	color: $neutral-900;
+}
+
+.link-lg {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-decoration: underline;
+
+	&--fuchsia {
+		@extend .link-lg;
+
+		color: $fuchsia-900;
+
+		&:hover {
+			@extend .link-lg;
+	
+			color: $fuchsia-700;
+		}
+	}
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}

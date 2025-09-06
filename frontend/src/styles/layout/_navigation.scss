@@ -1,0 +1,166 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+
+// Mobile link nav animation
+@keyframes show-mobile-nav {
+    from {right: 100%;}
+    to {right: 0;}
+}
+
+.navbar {
+    background-color: $neutral-50;
+    border-bottom: 5px solid $sky-300;
+
+    .navbar__logo {
+        @include afacad-black;
+
+        font-size: 2rem;
+        
+        &:first-letter {
+            color: $neutral-900;
+        }
+
+        @media only screen and (min-width: $tablet) {
+            font-size: 2.5rem;
+
+            @media only screen and (min-width: $desktop) {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .navbar__top {
+        @include navbar-container;
+        @include flex-space-bt-hor;
+        width: 100%;
+        
+        
+        .navbar__top__menu-button {
+            @include flex-center-all-hor;
+
+            background-color: transparent;
+            border: none;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            
+            .navbar__top__menu-button__img {
+                width: 40px;
+            }
+
+            .navbar__top__menu-button__img--close {
+                width: 24px;
+            }
+        }
+
+        .navbar__avatar {
+            @include flex-center-all-hor;
+
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            
+            .navbar__avatar__img {
+                border-radius: $br-round;
+                width: 40px;
+            }
+        }
+    }
+
+    .navbar__links__container {
+        position: fixed;
+        background-color: $sky-50;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 99;
+        animation: show-mobile-nav 200ms ease-out forwards;
+        
+        /* Hide Scrollbar for IE and Edge */
+        -ms-overflow-style: none;
+        /* Hide Scrollbar for Firefox */
+        scrollbar-width: none;
+        // Hide Scrollbar for Chrome, Safari, Opera
+        &::-webkit-scrollbar {
+            display: none
+        }
+        
+        .navbar__links {
+            @include flex-center-all-ver;
+            
+            min-width: $mobile;
+            padding: 64px 32px;
+            gap: 8px;
+
+            .navbar__link {
+                padding: 8px;
+                width: 100%;
+                max-width: 350px;
+                text-align: center;
+                color: $sky-900;
+                border-radius: $br-sm;
+
+                &:hover {
+                    background-color: $sky-100;
+                }
+
+                &--active {
+                    @extend .navbar__link;
+
+                    background-color: $sky-200;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .navbar__links__container__desktop {
+        @include flex-center-all-hor;
+
+        gap: 2rem;
+
+        .navbar__links__desktop {
+            @include flex-center-all-hor;
+
+            gap: .25rem;
+            
+            .navbar__link__desktop {
+                background-color: transparent;
+                color: $neutral-900;
+                padding: 8px 12px;
+                border-radius: $br-md;
+                transition: background-color 300ms;
+
+                &:hover {
+                    background-color: $neutral-200;
+                    transition: background-color 150ms;
+                }
+
+                &--active {
+                    @extend .navbar__link__desktop;
+                    background-color: $sky-100;
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: $sky-200;
+                        transition: background-color 150ms;
+                    }
+                }
+            }
+        }
+        
+        .navbar__links__login__desktop {
+            @include flex-center-all-hor;
+
+            gap: 1rem;
+
+            & > div {
+                @include flex-center-all-hor;
+
+            gap: 1rem;
+            }
+        }
+    }
+}
